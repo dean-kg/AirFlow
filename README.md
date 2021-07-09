@@ -9,7 +9,7 @@ sudo apt-get install postgresql postgresql-contrib -y
 ## 초기 셋업 db   
 https://jungwoon.github.io/airflow/2019/02/26/Airflow.html 
 sudo -u postgres psql
-
+- db셋업 동작 :http://sanghun.xyz/2017/12/airflow-3.-localexecutor-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/
 
 ## 도커용 
 https://dorumugs.tistory.com/entry/AirFlow-Manual-on-Docker-stage-install    
@@ -26,4 +26,9 @@ airflow users create \
  --email pbj00812@gmail.com
  
  
- ##
+ ## /home/admin/airflow/python_runtime/bin/gunicorn 에러 대처    
+ 
+$ export PATH=$PATH:~/.local/bin   
+$ airflow webserver    
+  
+
