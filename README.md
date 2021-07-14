@@ -46,4 +46,6 @@ airflow schduler &!
 ## roles 관련   
 - user에게 실행 권한 주기 ("can create on DAG Runs")
   
-
+## webhook 관련     
+- slack등의 outcome의 기능은 존재     
+- 자체 income 기능은 없다     
