@@ -7,6 +7,9 @@ sudo apt-get install postgresql postgresql-contrib -y
 
 
 ## 초기 셋업 db   
+mysql, sqlite의 경우 multiprocess불가능 -> postgresql 이동필요     
+
+
 https://jungwoon.github.io/airflow/2019/02/26/Airflow.html   
 sudo -u postgres psql    
 - db셋업 동작 :http://sanghun.xyz/2017/12/airflow-3.-localexecutor-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/
