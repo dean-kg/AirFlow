@@ -49,3 +49,8 @@ airflow schduler &!
 ## webhook 관련     
 - slack등의 outcome의 기능은 존재     
 - 자체 income 기능은 없다     
+
+
+## api
+- client api -> 같은 서버 공간에서의 dags 실행을 위한 api.   
+- 외부 서버 REST api https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html.   
