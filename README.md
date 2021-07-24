@@ -64,7 +64,10 @@ c.trigger_dag(dag_id='dag_id', conf={'target':target}) 으로 api 호출
 dag 상에서 
 ```{.python}
 def print_arguments(**kwargs):   
-    table_name = kwargs['dag_run'].conf.get('table')   -> 포인트  
+    table_name = kwargs['dag_run'].conf.get('table')   -> 포인트   
+      
+        
+         
 task = PythonOperator(
     task_id="sample_task",
     python_callable=print_arguments,
