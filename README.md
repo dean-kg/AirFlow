@@ -75,3 +75,7 @@ task = PythonOperator(
     dag=dag
 )
 ```
+
+
+## variable 익명화   
+password,secret,passwd,authorization,api_key,apikey,access_token 의 단어들이 key값으로 들어가면 value값이 익명으로 나타난다.     
