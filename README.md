@@ -54,3 +54,19 @@ airflow schduler &!
 ## api
 - client api -> 같은 서버 공간에서의 dags 실행을 위한 api.   
 - 외부 서버 REST api https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html.   
+
+
+
+## pythonoperator Dags conf 인자 받기
+api 상에서    
+c = Client(None, None)    
+c.trigger_dag(dag_id='dag_id', conf={'target':target}) 으로 api 호출    
+dag 상에서  
+def print_arguments(**kwargs):   
+    table_name = kwargs['dag_run'].conf.get('table')   -> 포인트  
+task = PythonOperator(
+    task_id="sample_task",
+    python_callable=print_arguments,
+    provide_context=True,                ## 반드시 해당 옵션을 지정해야 함
+    dag=dag
+)
