@@ -62,7 +62,7 @@ api 상에서
 c = Client(None, None)    
 c.trigger_dag(dag_id='dag_id', conf={'target':target}) 으로 api 호출    
 dag 상에서 
-'''
+```{.python}
 def print_arguments(**kwargs):   
     table_name = kwargs['dag_run'].conf.get('table')   -> 포인트  
 task = PythonOperator(
@@ -71,4 +71,4 @@ task = PythonOperator(
     provide_context=True,                ## 반드시 해당 옵션을 지정해야 함
     dag=dag
 )
-'''
+```
