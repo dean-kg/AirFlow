@@ -79,3 +79,29 @@ task = PythonOperator(
 
 ## variable 익명화   
 password,secret,passwd,authorization,api_key,apikey,access_token 의 단어들이 key값으로 들어가면 value값이 익명으로 나타난다.     
+
+## postgresql operator   
+- hook을 이용 하여 sql return value를 핸들링 할 수 있다.  
+```{.python}
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+
+
+def reorderCheck(**xcompusher):
+    hook = PostgresHook(postgres_conn_id='db_conn')
+    
+    #x_com으로 특정 value 추출
+    userpk = xcompusher['t'].xcom_pull(key='v')['v1']
+
+    if userpk =='NotExist':
+        reorder = 'response Error'
+    else:
+    
+        #쿼리 날리기
+        resultSql = hook.get_records("select exists(select 1 from completedorderlst where userpk='%s');"%userpk)
+        reorder =str(resultSql[0][0])
+    
+    #x_com 으로 데이터 업로드
+    xcompusher['t'].xcom_push(key='vv', value={'vv':reorder})
+
+
+```
