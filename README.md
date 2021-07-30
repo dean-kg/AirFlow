@@ -105,3 +105,60 @@ def reorderCheck(**xcompusher):
 
 
 ```
+
+
+
+
+
+## db 에서 pandas 이동
+
+### push
+```
+def fun1(**params):
+    mergeDF = pd.DataFrame()
+    params['ti'].xcom_push(key='subdata', value={'data': mergeDF.to_dict()})
+    return
+
+def fun2(**params):
+    import pandas as pd
+    df = pd.DataFrame(params['ti'].xcom_pull(key='subdata')['data'])
+    retrun
+
+
+```
+
+
+## postgreHook
+
+### check exist
+```
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+
+hook = PostgresHook(postgres_conn_id='dbconn')
+resultSql = hook.get_records(
+    "select exists(select 1 from TABLENAME where COLUMNSNALE='%s');" % VALUE)
+```
+
+### insert
+
+```
+request = "insert into TABLENAME (p1,p2,p3) values ('%s',%d,'%s');" % (
+    p1value, p2value, p3value)
+pg_hook = PostgresHook(postgres_conn_id='dbconn')
+connection = pg_hook.get_conn()
+cursor = connection.cursor()
+cursor.execute(request)
+connection.commit()
+cursor.close()
+connection.close()
+```
+
+
+## get parameter conf from webserver
+```
+def function(**parm):
+
+    ## on webserber {"name":"target_paramter"} -> 큰 따옴표로 찍어야함
+    parm['dag_run'].conf.get('name')
+    return 
+```
