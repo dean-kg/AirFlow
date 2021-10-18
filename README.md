@@ -162,3 +162,9 @@ def function(**parm):
     parm['dag_run'].conf.get('name')
     return 
 ```
+
+
+
+## 에러발생케이스
+- docker로 운영시 Python pakages -> webserver 도커에 설치
+- Failed to fetch log file from worker. Unsupported URL protocol '' 에러의 경우 logs 폴더에 777권한
