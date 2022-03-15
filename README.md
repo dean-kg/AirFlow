@@ -20,6 +20,11 @@ https://dorumugs.tistory.com/entry/AirFlow-Manual-on-Docker-stage-install
 도커 권한    
 https://velog.io/@jeong3320/dockerdocker-sudo%EA%B6%8C%ED%95%9C%EC%97%86%EC%9D%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0
 
+## 서버 이사가면서 재설정
+- docker-compose 2버전 이상설치
+- airflow 2.3.2업데이트
+
+
 ## 초기 유저설정
 
 airflow users create \
@@ -40,7 +45,7 @@ airflow webserver -p port_num &!
 airflow schduler &!
 
 ## lightsail vm 실패    
-- 3.5달러 (RAM 500MB) // 5달러 (RAM 1GB) -> 모두 webserver, scheduler 동시실행시 서버터짐 ㅋ    
+- 3.5달러 (RAM 500MB) // 5달러 (RAM 1GB) -> 모두 webserver, scheduler 동시실행시 서버터짐 ㅋ  (최소 4gb의 메모리가 필요)
 
 ## dags 관련   
 - 
