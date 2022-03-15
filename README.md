@@ -17,6 +17,8 @@ sudo -u postgres psql
 ## 도커용 
 https://dorumugs.tistory.com/entry/AirFlow-Manual-on-Docker-stage-install    
 
+도커 권한    
+https://velog.io/@jeong3320/dockerdocker-sudo%EA%B6%8C%ED%95%9C%EC%97%86%EC%9D%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0
 
 ## 초기 유저설정
 
